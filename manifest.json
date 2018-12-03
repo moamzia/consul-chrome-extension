@@ -1,0 +1,33 @@
+{
+  "name": "Consul renewing consul updater refresher",
+  "version": "1.0",
+  "description": "As the perfect name of this extension beautifully explains, it's for getting the ip/port number of each microservice for an specific environment",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "webNavigation"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "jquery-3.3.1.min.js",
+      "background.js"
+    ]
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icons8-chicken-16.png",
+      "48": "images/icons8-chicken-48.png",
+      "128": "images/icons8-chicken-100.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.amazonaws.com/*"],
+      "js": ["jquery-3.3.1.min.js"]
+    }
+  ],
+  "manifest_version": 2
+}
